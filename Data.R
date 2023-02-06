@@ -20,11 +20,12 @@ data10 <- tm_player_market_values(league_url = "https://www.transfermarkt.co.in/
 # Combine and Wrangle
 
 data <- rbind(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10) 
-unique(data$comp_name)
+
 data <- data %>%
   filter(!player_name == "Benjamin Mendy") %>%
-  filter(!player_name == "Mason Greenwood")
+  filter(!player_name == "Mason Greenwood") %>%
+  filter(!player_name == "Thomas Partey")
 
 # Save
 
-write.csv(data, "CompositionSquadData.csv", row.names = FALSE)
+write.csv(data, "CompositionSquadDataJanuary23.csv", row.names = FALSE)
